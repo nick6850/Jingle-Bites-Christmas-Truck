@@ -1,8 +1,7 @@
 import {menuItems} from '/menu-items.js'
 
 const menu = document.querySelector('.menu')
-
-
+const orderedItems = {}
 
 
 function getMenu(){
@@ -16,12 +15,36 @@ function getMenu(){
                 <div class="food-ingredients">(${item.ingredients})</div>
                 <div class="food-price">$${item.price}</div>
             </div>
-            <button>+</button>
+            <button class='add-item' id='${item.name}'>+</button>
         </div>
         `
     });
     return menuHtml
 }
 
-
 menu.innerHTML = getMenu()
+
+
+const renderTotal = function(){
+
+}
+
+const addItem = function(itemName){
+    if (itemName in orderedItems) {
+        orderedItems.itemName += 1
+    } else {
+        orderedItems.itemName += 0 
+    }
+    console.log(orderedItems)
+}
+
+
+const addItemBtn = document.querySelectorAll('.add-item')
+
+addItemBtn.forEach(button => {
+    button.addEventListener('click', (e) => {
+        console.log(typeof e.target.id)
+    })
+})
+
+

@@ -14,6 +14,10 @@ header {
     justify-content: center;
 }
 
+.menu, .order-details {
+    font-size: 25px;
+}
+
 .name, .description {
     color: white;
     text-shadow:2px 2px black;
@@ -45,11 +49,60 @@ header {
 
 .food-details {
     padding: 20px;
-    flex: 1;
 }
 
 .food-image {
     width: 100px;
     border-radius: 10px;
     margin-right: 20px;
+}
+
+.add-item{
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.order-details {
+    font-weight: bold;
+    text-align: center;
+    width: 550px;
+    margin: 0 auto;
+}
+
+.order-item, .total-price-section{
+    display: flex;
+    margin-top: 30px;
+    gap: 15px;
+}
+
+.order-item:last-child{
+    border-bottom: black 2px solid;
+}
+
+.order-item-price, .total-price{
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.total-price-section{
+    padding-top: 15px;
+    border-top: 1px black solid;
+}
+
+.complete-btn {
+    margin-top: 35px;
+    border: none;
+    width: 100%;
+    padding: 10px;
+    background-color: #1B5E1A;
+    font-size: 25px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.remove-btn{
+    border: none;
+    background-color: white;
+    cursor: pointer;
 }
