@@ -17,17 +17,14 @@
     <div class="menu">
     </div>
     <div class="order-details">
-        <div class="order">Your order</div>
-            <div class="order-item">
-                <div class="order-item-name">Pizza</div>
-                <button class="remove-btn">(remove)</button>
-                <div class="order-item-price">$9</div>
-            </div>
-            <div class="total-price-section">
-                <div>Total price:</div>
-                <div class="total-price">$9</div>
-            </div>
-        <button class="complete-btn">Complete order</button>
     </div>
+
+    <form method="post" id='form' class="payment hidden">
+        <div style="font-weight: bold;text-align: center;">Enter card details</div>
+        <input type="text" name="" id="" placeholder="Enter your name">
+        <input type="number" name="" id="" placeholder="Enter card number">
+        <input type="number" name="" id="" placeholder="Enter CVV">
+        <button type="button">Pay</button>
+    </form>
 </body>
 </html>
