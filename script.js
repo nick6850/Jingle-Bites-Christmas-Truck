@@ -47,7 +47,7 @@ let totalPriceNum = 0
 
 const renderTotalItems = function(){
     orderDetails.innerHTML = ''
-    let orderHTML = ''
+    let orderHTML = '<div class="order">Your order</div>'
     totalPriceNum = 0
     console.log(orderedItems)
     Object.keys(orderedItems).forEach(itemName => {
@@ -70,7 +70,6 @@ const renderTotalItems = function(){
 const renderTotalPrice = function(){
     orderDetails.innerHTML += 
     `<div class="order-details">
-        <div class="order">Your order</div>
             <div class="total-price-section">
                 <div>Total price:</div>
                 <div class="total-price">$${totalPriceNum.toFixed(2)}</div>
@@ -78,13 +77,6 @@ const renderTotalPrice = function(){
         <button class="complete-btn">Complete order</button>
     </div>`
 }
-
-
-document.addEventListener('click', function(event) {
-    if (event.target.classList.contains('remove-btn')) {
-        removeItem(event.target.id);
-    }
-});
 
 
 const removeItem = function(itemName){
@@ -95,11 +87,35 @@ const removeItem = function(itemName){
     renderTotalItems()
 }
 
-const form = document.getElementById('form')
+function capitalize(word) {
+    return word.charAt(0).toUpperCase() + word.slice(1);
+  }
 
 
 document.addEventListener('click', function(event) {
-    if (event.target.classList.contains('complete-btn')) {
+    if (event.target.classList.contains('remove-btn')) {
+        removeItem(event.target.id);
+    } else if (event.target.classList.contains('complete-btn')) {
         form.classList.remove('hidden')
+    } else if (event.target.id == 'close-btn') {
+        form.classList.add('hidden')
+    } else if (event.target.id == 'pay-btn') {
+        event.preventDefault()
+        const form = document.getElementById('form')
+        const formData = new FormData(form);
+        if (form.checkValidity()) {
+            renderThankYou(formData.get('client-name'));
+        } else {
+            form.reportValidity();
+        }
+    } else {
+        document.querySelector('.thanks').classList.add('hidden')
     }
 });
+
+'hey'.toLowerCase
+
+const renderThankYou = function(clientName){
+    form.classList.add('hidden')
+    orderDetails.innerHTML = `<div class='thanks'>Thank you, ${capitalize(clientName)}! Your order is getting ready!</div>`
+}

@@ -19,12 +19,13 @@
     <div class="order-details">
     </div>
 
-    <form method="post" id='form' class="payment hidden">
-        <div style="font-weight: bold;text-align: center;">Enter card details</div>
-        <input type="text" name="" id="" placeholder="Enter your name">
-        <input type="number" name="" id="" placeholder="Enter card number">
-        <input type="number" name="" id="" placeholder="Enter CVV">
-        <button type="button">Pay</button>
+    <form method="post" action='' id='form' class="payment hidden">
+        <button type="button" id="close-btn">X</button>
+        <div style="margin-top:10px; font-weight: bold; text-align: center;">Enter card details</div>
+        <input type="text" minlength=1 name="client-name" id="" placeholder="Enter your name" required>
+        <input type="text" pattern="[0-9]*" maxlength="16" name="card-num" id="" placeholder="Enter card number" required>
+        <input type="text" pattern="[0-9]*" maxlength="3" name="cvv" id="" placeholder="Enter CVV" required>
+        <button type="submit" id="pay-btn">Pay</button>
     </form>
 </body>
 </html>

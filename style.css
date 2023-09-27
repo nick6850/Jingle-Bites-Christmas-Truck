@@ -15,7 +15,7 @@ header {
 }
 
 .menu, .order-details {
-    font-size: 25px;
+    font-size: 30px;
 }
 
 .name, .description {
@@ -36,12 +36,16 @@ header {
     font-size: 1.8em;
 }
 
+.menu .food-item:last-child {
+    border: none;
+}
 
 .food-item {
     display: flex;
     width: 550px;
     margin: 0 auto;
     align-items: center;
+    border-bottom: 1px solid gainsboro;
 }
 
 .food-name, .food-price {
@@ -137,4 +141,29 @@ header {
 
 .hidden {
     display: none;
+}
+
+#close-btn {
+    position: absolute;
+    top: 3px;
+    margin: 3px;
+    right: 3px;
+    padding: 3px;
+    font-size: 15px;
+}
+
+.thanks {
+    height: min-content;
+    width: max-content;
+    margin: 0 auto;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 50vh;
+    bottom: 0;
+    text-align: center;
+    padding: 15px;
+    color: white;
+    background-color: #1B5E1A;
+    border: black 1px solid;
 }
